@@ -1,0 +1,22 @@
+#add-task-form {
+    margin-bottom: 1em;
+}
+
+#task-input {
+    width: 70%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+}
+
+#add-task-btn {
+    width: 30%;
+    padding: 0.5em;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#add-task-btn:hover {
+    background-color: #444;
+}
