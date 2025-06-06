@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Filtrar Tareas</title>
 </head>
 <body>
-    <h1>HOOLAAAA</h1>
+  <h1>Lista de Tareas</h1>
+
+  <input type="text" id="searchInput" placeholder="Filtrar tareas...">
+  <ul id="taskList">
+    <li>Comprar pan</li>
+    <li>Estudiar para el examen</li>
+    <li>Llamar al doctor</li>
+    <li>Revisar correos</li>
+    <li>Hacer ejercicio</li>
+    <li>Hacer pull requests</li>
+
+  </ul>
+
+  <script>
+    const input = document.getElementById('searchInput');
+    const list = document.getElementById('taskList');
+
+    input.addEventListener('input', () => {
+      const filter = input.value.toLowerCase();
+      const items = list.getElementsByTagName('li');
+
+      for (let i = 0; i < items.length; i++) {
+        const itemText = items[i].textContent.toLowerCase();
+        items[i].style.display = itemText.includes(filter) ? '' : 'none';
+      }
+    });
+  </script>
 </body>
 </html>
